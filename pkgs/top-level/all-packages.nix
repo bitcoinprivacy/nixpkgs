@@ -4811,6 +4811,8 @@ in
 
     base64 = callPackage ../development/ocaml-modules/base64 { };
 
+   bge = import ../servers/bge { inherit sbt stdenv jdk fetchgit; };
+
     bolt = callPackage ../development/ocaml-modules/bolt { };
 
     bitstring_2_0_4 = callPackage ../development/ocaml-modules/bitstring/2.0.4.nix { };
