@@ -4811,9 +4811,7 @@ in
 
     base64 = callPackage ../development/ocaml-modules/base64 { };
 
-   bge = import ../servers/bge { inherit sbt stdenv jdk fetchgit; };
-
-    bolt = callPackage ../development/ocaml-modules/bolt { };
+     bolt = callPackage ../development/ocaml-modules/bolt { };
 
     bitstring_2_0_4 = callPackage ../development/ocaml-modules/bitstring/2.0.4.nix { };
     bitstring_git   = callPackage ../development/ocaml-modules/bitstring { };
@@ -9837,6 +9835,8 @@ in
   asterisk = callPackage ../servers/asterisk { };
 
   sabnzbd = callPackage ../servers/sabnzbd { };
+
+  bge = import ../servers/bge { inherit sbt stdenv jdk fetchgit makeWrapper; };
 
   bind = callPackage ../servers/dns/bind { };
 

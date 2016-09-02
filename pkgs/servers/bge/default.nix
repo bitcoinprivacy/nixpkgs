@@ -1,4 +1,4 @@
-{sbt,stdenv, fetchgit,jdk}:
+{sbt,stdenv, fetchgit,jdk, makeWrapper}:
  stdenv.mkDerivation {
     name = "bge";
 
@@ -24,7 +24,7 @@
      cp bge $out/bin/
      cp  ./api/target/scala-2.11/bgeapi-assembly-1.0.jar $out
      cp api/bgeapi $out/bin/
-                 
+     wrapProgram $out/bin/bge --suffix LD_LIBRARY_PATH : ${stdenv.cc.cc.lib}/lib                 
     '';
 
     src = fetchgit {
@@ -36,7 +36,7 @@
     shellHook = ''
 
     export PS1="BGE > " '';
-    LD_LIBRARY_PATH="${stdenv.cc.cc}/lib64";
+#    LD_LIBRARY_PATH="${stdenv.cc.cc}/lib64";
 
-    buildInputs = [sbt];
+    buildInputs = [sbt makeWrapper];
 }
