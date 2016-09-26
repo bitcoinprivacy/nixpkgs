@@ -1,6 +1,15 @@
 {sbt,stdenv, fetchgit,jdk, makeWrapper}:
+
+with stdenv.lib;
  stdenv.mkDerivation {
     name = "bge";
+
+    meta = {
+     description = "Bitcoin Graph Explorer is a blockchain analysis server";
+       homepage = "https://bitcoinprivacy.net";
+       maintainers =  with maintainers; [ jorgemartinezpizarro stefanwouldgo ];
+       license = licenses.asl20;
+    };
 
     buildPhase = let
       sbtBootDir = "./.sbt/boot/";
