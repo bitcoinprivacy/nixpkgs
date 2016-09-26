@@ -20,7 +20,7 @@
     installPhase = ''
      mkdir -p $out
      mkdir -p $out/bin/
-     cp  ./target/scala-2.11/bge-assembly-3.0.jar $out
+     cp  ./target/scala-2.11/bge-assembly-3.1.jar $out
      cp bge $out/bin/
      cp  ./api/target/scala-2.11/bgeapi-assembly-1.0.jar $out
      cp api/bgeapi $out/bin/
@@ -29,8 +29,8 @@
 
     src = fetchgit {
     url = "git://github.com/bitcoinprivacy/Bitcoin-Graph-Explorer.git";
-    rev = "d309d06";
-    md5 = "6735bcb2a2d6597e568ad50eb08459a9";
+    rev = "080bd1f";
+    md5 = "3928c2cea051f3a505e21c396c57d054";
     } ;
     JAVA_HOME = "${jdk}";
     shellHook = ''
